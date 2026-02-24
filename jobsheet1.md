@@ -4,155 +4,94 @@
 <h4>NIM   : 254107020058<h4>
 <h4>Kelas : TI-1G<h4>
 
+## Latihan 1.1
+Jelaskan 5 fungsi utama sistem operasi dengan contoh konkret dari minimal 2 OS berbeda (Windows, macOS, atau Linux).
 
-## 2.1 Percobaan 1: Identifikasi CPU dan Memori
-![step1.png](pict_jobsheet2/step1.png)
+## Jawaban Latihan 1.1
+A. Manajemen Proses
+Sistem operasi mengatur jalannya program yang sedang berjalan, termasuk multitasking, prioritas proses, dan penjadwalan CPU
 
-### Latihan 2.1
-Catat: (1) jumlah CPU(s), core/thread, (2) total RAM, (3) total swap. Jelaskan perbedaan RAM vs swap dalam 2–3 kalimat.
+B. Manajemen Memory
+OS mengatur penggunaan RAM agar setiap program mendapat ruang memori yang cukup dan tidak saling mengganggu
 
-### Jawaban latihan 2.1
-1. Jumlah CPU(s) pada perangkat adalah 16, jumlah corenya adalah 8, dan jumlah thread nya adalah 2 setiap core, yang artinya perangkat ini memiliki 16 thread.
+C. Manajemen Sistem Berkas
+OS mengatur penyimpanan, pengorganisasian, dan akses file di perangkat
 
-## 2.2 Percobaan 2: Identifikasi Perangkat PCI/USB dan Driver
-![step2.png](pict_jobsheet2/step2.png)
+D. Manajemen Perangkat Keras
+OS bertugas menjadi perantara antara software dan hardware seperti printer, keyboard, GPU, dan disk
 
-### Latihan 2.2
-Temukan 1 perangkat PCI (misal NIC) dan tuliskan: Vendor:Device ID (angka
-heksadesimal), nama driver/modul kernel, dan deskripsi singkat fungsinya.
+E. Antarmuka Pengguna
+OS menyediakan cara pengguna berinteraksi dengan komputer, baik GUI maupun CLI
 
-### Jawaban latihan 2.2
-Perangkat         : Network controller (NIC Wi-Fi)
-Vendor:Device ID  : 10ec:8922
-10ec              : vendor Realtek Semiconductor
-8922              : ID perangkat Wi-Fi Realtek
-Driver            : rtw89_8922a
-Perangkat ini adalah kartu jaringan nirkabel atau Wi-Fi yang memungkinkan laptop terhubung ke internet melalui router atau access point tanpa menggunakan kabel. Selain itu, perangkat ini juga sering kali mendukung fitur Bluetooth yang diintegrasikan dalam chipset yang sama.
+## Latihan 1.2
+Kapan sebaiknya menggunakan Windows vs Linux vs macOS? Analisis berdasarkan use case: gaming, development, server, creative work, dan enterprise.
 
-## 2.3 Percobaan 3: Identifikasi Storage dan Filesystem
-![step3.1.png](pict_jobsheet2/step3.1.png)
-![step3.2.png](pict_jobsheet2/step3.2.png)
+## Jawaban Latihan 1.2
+Ketika tujuan utama menggunakan komputer adalah untuk bisnis dan gaming, maka windows adalah os yang tepat untuk tipe pengguna     tersebut, karena untuk bisnis, windows menawarka user friendly dan berbagai macam aplikasi yang menunjang bisnis mereka. sedangkan untuk gaming, memang banyak game yang kompatibel dijalankan pada os windows, sehingga membuat windows menjadi os yang cocok untuk bermain game.
 
-## 2.4 Percobaan 4: Melihat Modul Aktif dan Informasinya
-![step4.png](pict_jobsheet2/step4.png)
+Jika tujuan utama menggunakan komputer untuk software development, maka macOS atau linux adalah os yang cocok. Linux adalah opsi yang sangat populer untuk software fevelopment karena memiliki environment yang mirip dengan server production, package management yang kuat.
+macOS sangat cocok untuk software development karena macOS berbasis unix yang mirip dengan linux dan memiliki tool dev yang lengkap, dan satu satunya OS untuk iOS dev sehingga macOS menjadi favorit ketika digunakan untuk software development
 
-## 2.5 Percobaan 5: Konfigurasi Auto-load dan Blacklist
-![step5.png](pict_jobsheet2/step5.png)
+Jika tujuan utama dari komputer adalah sebagai server industry, maka linux adalah os yang paling cocok karena stabil, hemat resource, opensource dan digunakan oleh mayoritas cloud.
+## Latihan 1.3
+Install Ubuntu Server 22.04 LTS di VirtualBox dengan langkah berikut:
+1. Download Ubuntu Server ISO dari website resmi
+2. Create VM baru di VirtualBox (RAM: 2GB, Disk: 25GB)
+3. Install dengan automatic partitioning (guided)
+4. Buat user account dengan password yang kuat
+5. Reboot dan login ke sistem
+6. Dokumentasikan proses instalasi dengan screenshot key steps
+![neofetch.png](pict_jobsheet2/neofetch.png)
+## Jawaban Latihan 1.3
+![UbuntuLogin.png](pict_jobsheet2/UbuntuLogin.png)
+Disini saya menggunakan metode dual boot ubuntu.
 
-## 2.6 Percobaan 6 Mengenali Block vs Character Device
-![step6.1.png](pict_jobsheet2/step6.1.png)
-![step6.2.png](pict_jobsheet2/step6.2.png)
-![step6.3.png](pict_jobsheet2/step6.3.png)
+## Latihan 1.4
+Setelah instalasi Ubuntu Server, lakukan tasks berikut:
+A. Update package list: sudo apt update
+B. Upgrade packages: sudo apt upgrade
+C. Install neofetch: sudo apt install neofetch
+D. Jalankan neofetch dan screenshot hasilnya
+E. Check disk usage dengan df -h
+F. Check memory dengan free -h
+G. Dokumentasikan output dari setiap command
 
-### Latihan 2.3
-Dari output ls -l, jelaskan perbedaan penanda file untuk block device dan character device. (Hint: karakter pertama pada permission string)
+## Jawaban Latihan 1.4
+A. ![1.4.1.png](pict_jobsheet2/1.4.1.png)
+B. ![1.4.2.png](pict_jobsheet2/1.4.2.png)
+C. ![1.4.3.png](pict_jobsheet2/1.4.3.png)
+D. ![1.4.4.png](pict_jobsheet2/1.4.4.png)
+E. ![1.4.5.png](pict_jobsheet2/1.4.5.png)
+F. ![1.4.5.png](pict_jobsheet2/1.4.5.png)
 
-### Jawaban Latihan 2.3
-Pada ls -l karakter pertama pada permission String menunjukan tipe file
-jika karakter pertama c berarti character device. yaitu perangkat yang mengirim dan menerima data dalam bentuk aliran karakter secara berurutan, seperti terminal, keyboard, atau port serial.
-jika karakter pertama b berarti block device. yaitu perangkat yang memproses data dalam blok-blok sehingga mendukung akses acak dan buffering, seperti hard disk, SSD, atau flashdisk.
-Dengan demikian, perbedaan utama antara penanda c dan b pada output ls -l terletak pada cara perangkat menangani data
+## Latihan 1.5
+Eksplorasi sistem yang baru diinstall:
+A. Tampilkan informasi OS: cat /etc/os-release
+B. Tampilkan versi kernel: uname -r
+C. Check network connectivity: ping -c 4 google.com
+D. Install dan jalankan htop untuk melihat resource usage
+E. Buat laporan singkat tentang konfigurasi sistem Anda
 
-## 2.7 Percobaan 7: Melihat Informasi udev
-![step7.png](pict_jobsheet2/step7.png)
+## Jawaban Latihan 1.5
+A. ![1.5.1.png](pict_jobsheet2/1.5.1.png)
+B. ![1.5.2.png](pict_jobsheet2/1.5.2.png)
+C. ![1.5.3.png](pict_jobsheet2/1.5.3.png)
+D. ![1.5.4.png](pict_jobsheet2/1.5.4.png)
+E. ![1.5.5.png](pict_jobsheet2/1.5.5.png)
 
-## 2.8 Percobaan 8: Membuat Workspace Praktikum
-![step8.1.png](pict_jobsheet2/step8.1.png)
-![step8.2.png](pict_jobsheet2/step8.2.png)
+Sistem saya menggunakan Ubuntu 24.04.4 LTS x86_64 dengan kernel 6.17.0-14-generic. Sistem ini menggunakan processor AMD Ryzen AI 7 350 dengan integrated GPU Radeon 860M. Sistem ini meiliki total memori 16gb yang terpotong menjadi 15gb karena terbagi untuk vram gpu.Sistem environment desktop ini menggunakan gnome 46.0 Theme Orchis-Dark-Compact [GTK2/3]. Karena sistem ini dual boot, saya melakukan partisi untuk windows 450gb dan ubuntu 50gb.
 
-## 2.9 Percobaan 9: Pencarian Pola dengan grep
-![step9.png](pict_jobsheet2/step9.png)
-
-### Latihan 2.4
-Gunakan grep untuk menampilkan hanya baris yang mengandung INFO atau WARN dari data.log. (Hint: gunakan grep -E dengan pola alternatif)
-
-### Jawaban Latihan 2.4
-![latihan2.4.png](pict_jobsheet2/latihan2.4.png)
-
-## 2.10 Percobaan 10: Substitusi dengan sed (Aman di File Latihan)
-![step10.png](pict_jobsheet2/step10.png)
-
-## 2.11 Percobaan 11: Ekstraksi Kolom dengan awk
-![step11.png](pict_jobsheet2/step11.png)
-
-## 2.12 Percobaan 12: Melihat Proses dengan ps
-![step12.png](pict_jobsheet2/step12.png)
-
-## 2.13 Percobaan 13: Monitoring Real-time dengan top
-![step13.png](pict_jobsheet2/step13.png)
-
-## 2.14 Percobaan 14: Menghentikan Proses dengan kill
-![step14.png](pict_jobsheet2/step14.png)
-
-## 2.15 Percobaan 15: Cek Disk, Load, dan Service
-![step15.1.png](pict_jobsheet2/step15.1.png)
-
-## 2.16 Percobaan 16: Monitoring Port dan Koneksi
-![step16.png](pict_jobsheet2/step16.png)
-
-### Latihan 2.5
-Pilih satu port yang listening dari output ss -tulpn(misal port 22), lalu
-tuliskan service/proses yang membukanya. Jelaskan kegunaan port tersebut
-secara singkat
-
-### Jawaban Latihan 2.5
-Port    : 127.0.0.1:3306
-Service : Biasanya digunakan oleh mySql atau maria database server yang berjalan di komputer dan karena muncul kata kunci 'LISTEN' maka hanya bisa diakses lewat localhost
-
-## Latihan 1.9
-
-### Latihan 2A
-Jalankan lspci -nnk. Pilih 1 perangkat PCI dan tuliskan: nama perangkat,
-ID vendor:device, dan kernel driver in use
-
-### Jawaban Latihan 2A
-Nama Perangkat        : Non-Volatile memory controller (NVMe SSD)
-ID Vendor             : device: 15b7:5035
-Kernel Driver in Use  : device: 15b7:5035
-
-### Latihan 2B
-Tentukan device root filesystem dengan findmnt /. Lalu cocokkan dengan
-lsblk -f dan tuliskan tipe filesystem serta UUID-nya
-
-### Jawaban Latihan 2B
-Device root filesystem  : /dev/nvme0n1p5
-Tipe filesystem         : ext4
-UUID                    : a7d53045-c480-4910-9536-7b85ceb4bcfe
-
-### Latihan 2C
-Buat file server.log berisi minimal 10 baris dengan variasi kata: INFO,
-WARN, ERROR. Gunakan grep untuk menampilkan hanya baris ERROR.
-
-### Jawaban Latihan 2C
-![latihan2c.png](pict_jobsheet2/latihan2c.png)
-
-### Latihan 2D
-Gunakan sed untuk mengganti semua kata server menjadi node pada file
-latihan. Tunjukkan sebelum dan sesudah
-
-### Jawaban Latihan 2D
-![latihan2d.png](pict_jobsheet2/latihan2d.png)
-bagian atas adalah sebelum mengganti kata server menjadi node. Bagian bawah setelah diganti dengan node.
-
-### Latihan 2E
-Gunakan df -h lalu awk untuk menampilkan filesystem yang penggunaan disk
-di atas 70%.
-
-### Jawaban Latihan 2E
-![latihan2e.png](pict_jobsheet2/latihan2e.png)
-output tersebut menunjukan bahwa tidak ada filesystem yang penggunaan disk nya di atas 70%
-
-### Latihan 2F
-Jalankan sleep 600 &. Temukan PID-nya dengan ps. Hentikan dengan
-SIGTERM. Jelaskan beda SIGTERM vs SIGKILL.
-
-### Jawaban Latihan 2F
-![latihan2f.png](pict_jobsheet2/latihan2f.png)
-PID proses sleep dapat ditemukan menggunakan perintah ps, misalnya PID 113855. Proses dapat dihentikan menggunakan perintah kill yang secara default mengirim sinyal SIGTERM sehingga proses berhenti secara normal. Jika proses tidak merespons, dapat digunakan SIGKILL untuk memaksa proses berhenti secara langsung tanpa proses cleanup.
-### Jawaban Latihan 2G
-Gunakan systemctl –failed. Jika tidak ada yang gagal, pilih satu service
-aktif (misal ssh) dan tampilkan status serta 30 baris log terakhirnya.
-
-### Jawaban Latihan 2G
-![latihan2g.1.png](pict_jobsheet2/latihan2g.1.png)
-![latihan2g.2.png](pict_jobsheet2/latihan2g.2.png)
+## Latihan 1.6
+Ceritakan pengalaman Anda dengan sistem operasi:
+1. Sistem operasi apa yang Anda gunakan sehari-hari? (Windows, macOS, Linux, atau lainnya)
+2. Berapa lama Anda menggunakan sistem operasi tersebut?
+3. Apa yang Anda sukai dari sistem operasi tersebut?
+4. Apa tantangan atau masalah yang pernah Anda hadapi?
+5. Apakah Anda pernah menggunakan sistem operasi lain? Bandingkan pengalaman Anda.
+6. Setelah mempelajari bab ini, apakah ada sistem operasi lain yang ingin Anda coba? Mengapa?
+Tulis refleksi Anda dalam 300-500 kata disertai dengan dokumentasi.
+## Jawaban Latihan 1.6
+Untuk saat ini, saya menggunakan Linux sebagai daily driver karena saya pada awalnya tertarik mencoba untuk menggunakan sistem operasi lain selain windows. Saya mulai menggunakan Linux (ubuntu) sekitar bulan desember hingga sekarang. Saya suka bagaimana Linux (ubuntu) memberikan pengalaman baru. mulai dari proses instalasi sampai menggunakannya sebagai daily driver. Selain itu, saya dapat melakukan customisasi terhadap tampilannya menjadi seperti yang saya inginkan. Tantangan yang saya hadapi ketika menggunakan linux banyak terjadi ketika baru meng-install. Mulai dari pembagian partisi, hingga benar benar ter-install. Kemudian saya harus beradaptasi untuk menggunakan command prompt. Menurut saya command prompt terlihat sangat menakutkan untuk pemula. Saya juga menemukan banyak error ketika instalasi tema. Saya harus banyak membaca dari reddit dan forum forum untuk menemukan jawabannya. 
+Sebelum saya menggunakan Linux, saya menggunakan windows 11. menurut saya, windows 11 dan linux memiliki keunggulan yang berbeda. Windows unggul pada kompabilitasnya dengan banyak sekali game, sedangkan linux sangat cocok untuk software development. Hal yang membuat saya beralih menggunakan linux adalah karena windows 11 memakan banyak sumberdaya. Ketika kondisi idle, windows dapat memakan 60% dari penggunaan ram dari sistem dengan kapasitas ram 16gb. Sementara pada linux, idle hanya memakan sekitar 8 hingga 10% ram. 
+Setelah mempelajari bab ini, saya ingin mencoba menggunakan distro lain, seperti fedora atau arch linux. 
+E. ![dokumentasi.png](pict_jobsheet2/dokumentasi.png)
