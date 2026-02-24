@@ -41,9 +41,9 @@ Install Ubuntu Server 22.04 LTS di VirtualBox dengan langkah berikut:
 4. Buat user account dengan password yang kuat
 5. Reboot dan login ke sistem
 6. Dokumentasikan proses instalasi dengan screenshot key steps
-![neofetch.png](pict_jobsheet2/neofetch.png)
+![neofetch.png](pict_jobsheet1/neofetch.png)
 ## Jawaban Latihan 1.3
-![UbuntuLogin.png](pict_jobsheet2/UbuntuLogin.png)
+![UbuntuLogin.png](pict_jobsheet1/UbuntuLogin.png)
 Disini saya menggunakan metode dual boot ubuntu.
 
 ## Latihan 1.4
@@ -94,4 +94,4 @@ Tulis refleksi Anda dalam 300-500 kata disertai dengan dokumentasi.
 Untuk saat ini, saya menggunakan Linux sebagai daily driver karena saya pada awalnya tertarik mencoba untuk menggunakan sistem operasi lain selain windows. Saya mulai menggunakan Linux (ubuntu) sekitar bulan desember hingga sekarang. Saya suka bagaimana Linux (ubuntu) memberikan pengalaman baru. mulai dari proses instalasi sampai menggunakannya sebagai daily driver. Selain itu, saya dapat melakukan customisasi terhadap tampilannya menjadi seperti yang saya inginkan. Tantangan yang saya hadapi ketika menggunakan linux banyak terjadi ketika baru meng-install. Mulai dari pembagian partisi, hingga benar benar ter-install. Kemudian saya harus beradaptasi untuk menggunakan command prompt. Menurut saya command prompt terlihat sangat menakutkan untuk pemula. Saya juga menemukan banyak error ketika instalasi tema. Saya harus banyak membaca dari reddit dan forum forum untuk menemukan jawabannya. 
 Sebelum saya menggunakan Linux, saya menggunakan windows 11. menurut saya, windows 11 dan linux memiliki keunggulan yang berbeda. Windows unggul pada kompabilitasnya dengan banyak sekali game, sedangkan linux sangat cocok untuk software development. Hal yang membuat saya beralih menggunakan linux adalah karena windows 11 memakan banyak sumberdaya. Ketika kondisi idle, windows dapat memakan 60% dari penggunaan ram dari sistem dengan kapasitas ram 16gb. Sementara pada linux, idle hanya memakan sekitar 8 hingga 10% ram. 
 Setelah mempelajari bab ini, saya ingin mencoba menggunakan distro lain, seperti fedora atau arch linux. 
-E. ![dokumentasi.png](pict_jobsheet2/dokumentasi.png)
+E. ![dokumentasi.png](pict_jobsheet1/dokumentasi.png)
