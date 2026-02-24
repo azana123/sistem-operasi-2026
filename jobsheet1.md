@@ -57,12 +57,12 @@ F. Check memory dengan free -h
 G. Dokumentasikan output dari setiap command
 
 ## Jawaban Latihan 1.4
-A. ![1.4.1.png](pict_jobsheet2/1.4.1.png)
-B. ![1.4.2.png](pict_jobsheet2/1.4.2.png)
-C. ![1.4.3.png](pict_jobsheet2/1.4.3.png)
-D. ![1.4.4.png](pict_jobsheet2/1.4.4.png)
-E. ![1.4.5.png](pict_jobsheet2/1.4.5.png)
-F. ![1.4.5.png](pict_jobsheet2/1.4.5.png)
+A. ![1.4.1.png](pict_jobsheet1/1.4.1.png)
+B. ![1.4.2.png](pict_jobsheet1/1.4.2.png)
+C. ![1.4.3.png](pict_jobsheet1/1.4.3.png)
+D. ![1.4.4.png](pict_jobsheet1/1.4.4.png)
+E. ![1.4.5.png](pict_jobsheet1/1.4.5.png)
+F. ![1.4.5.png](pict_jobsheet1/1.4.5.png)
 
 ## Latihan 1.5
 Eksplorasi sistem yang baru diinstall:
@@ -73,11 +73,11 @@ D. Install dan jalankan htop untuk melihat resource usage
 E. Buat laporan singkat tentang konfigurasi sistem Anda
 
 ## Jawaban Latihan 1.5
-A. ![1.5.1.png](pict_jobsheet2/1.5.1.png)
-B. ![1.5.2.png](pict_jobsheet2/1.5.2.png)
-C. ![1.5.3.png](pict_jobsheet2/1.5.3.png)
-D. ![1.5.4.png](pict_jobsheet2/1.5.4.png)
-E. ![1.5.5.png](pict_jobsheet2/1.5.5.png)
+A. ![1.5.1.png](pict_jobsheet1/1.5.1.png)
+B. ![1.5.2.png](pict_jobsheet1/1.5.2.png)
+C. ![1.5.3.png](pict_jobsheet1/1.5.3.png)
+D. ![1.5.4.png](pict_jobsheet1/1.5.4.png)
+E. ![1.5.5.png](pict_jobsheet1/1.5.5.png)
 
 Sistem saya menggunakan Ubuntu 24.04.4 LTS x86_64 dengan kernel 6.17.0-14-generic. Sistem ini menggunakan processor AMD Ryzen AI 7 350 dengan integrated GPU Radeon 860M. Sistem ini meiliki total memori 16gb yang terpotong menjadi 15gb karena terbagi untuk vram gpu.Sistem environment desktop ini menggunakan gnome 46.0 Theme Orchis-Dark-Compact [GTK2/3]. Karena sistem ini dual boot, saya melakukan partisi untuk windows 450gb dan ubuntu 50gb.
 
