@@ -34,3 +34,11 @@ Perangkat ini adalah kartu jaringan nirkabel atau Wi-Fi yang memungkinkan laptop
 
 ## 2.4 Percobaan 4: Melihat Modul Aktif dan Informasinya
 ![step4.png](pict_jobsheet2/step4.png)
+
+## 2.5 Percobaan 5: Konfigurasi Auto-load dan Blacklist
+![step5.png](pict_jobsheet2/step5.png)
+
+## 2.6 Percobaan 6 Mengenali Block vs Character Device
+![step6.1.png](pict_jobsheet2/step6.1.png)
+![step6.2.png](pict_jobsheet2/step6.2.png)
+![step6.3.png](pict_jobsheet2/step6.3.png)
