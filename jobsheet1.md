@@ -14,7 +14,7 @@ Catat: (1) jumlah CPU(s), core/thread, (2) total RAM, (3) total swap. Jelaskan p
 1. Jumlah CPU(s) pada perangkat adalah 16, jumlah corenya adalah 8, dan jumlah thread nya adalah 2 setiap core, yang artinya perangkat ini memiliki 16 thread.
 
 ## 2.2 Percobaan 2: Identifikasi Perangkat PCI/USB dan Driver
-![step1.png](pict_jobsheet2/step2.png)
+![step2.png](pict_jobsheet2/step2.png)
 
 ### Latihan 2.2
 Temukan 1 perangkat PCI (misal NIC) dan tuliskan: Vendor:Device ID (angka
@@ -28,4 +28,9 @@ Vendor:Device ID  : 10ec:8922
 Driver            : rtw89_8922a
 Perangkat ini adalah kartu jaringan nirkabel atau Wi-Fi yang memungkinkan laptop terhubung ke internet melalui router atau access point tanpa menggunakan kabel. Selain itu, perangkat ini juga sering kali mendukung fitur Bluetooth yang diintegrasikan dalam chipset yang sama.
 
-### Latihan 2.3
+## 2.3 Percobaan 3: Identifikasi Storage dan Filesystem
+![step3.1.png](pict_jobsheet2/step3.1.png)
+![step3.2.png](pict_jobsheet2/step3.2.png)
+
+## 2.4 Percobaan 4: Melihat Modul Aktif dan Informasinya
+![step4.png](pict_jobsheet2/step4.png)
