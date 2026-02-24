@@ -91,5 +91,68 @@ Gunakan grep untuk menampilkan hanya baris yang mengandung INFO atau WARN dari d
 ![step16.png](pict_jobsheet2/step16.png)
 
 ### Latihan 2.5
+Pilih satu port yang listening dari output ss -tulpn(misal port 22), lalu
+tuliskan service/proses yang membukanya. Jelaskan kegunaan port tersebut
+secara singkat
+
 ### Jawaban Latihan 2.5
-### Latihan
+Port    : 127.0.0.1:3306
+Service : Biasanya digunakan oleh mySql atau maria database server yang berjalan di komputer dan karena muncul kata kunci 'LISTEN' maka hanya bisa diakses lewat localhost
+
+## Latihan 1.9
+
+### Latihan 2A
+Jalankan lspci -nnk. Pilih 1 perangkat PCI dan tuliskan: nama perangkat,
+ID vendor:device, dan kernel driver in use
+
+### Jawaban Latihan 2A
+Nama Perangkat        : Non-Volatile memory controller (NVMe SSD)
+ID Vendor             : device: 15b7:5035
+Kernel Driver in Use  : device: 15b7:5035
+
+### Latihan 2B
+Tentukan device root filesystem dengan findmnt /. Lalu cocokkan dengan
+lsblk -f dan tuliskan tipe filesystem serta UUID-nya
+
+### Jawaban Latihan 2B
+Device root filesystem  : /dev/nvme0n1p5
+Tipe filesystem         : ext4
+UUID                    : a7d53045-c480-4910-9536-7b85ceb4bcfe
+
+### Latihan 2C
+Buat file server.log berisi minimal 10 baris dengan variasi kata: INFO,
+WARN, ERROR. Gunakan grep untuk menampilkan hanya baris ERROR.
+
+### Jawaban Latihan 2C
+![latihan2c.png](pict_jobsheet2/latihan2c.png)
+
+### Latihan 2D
+Gunakan sed untuk mengganti semua kata server menjadi node pada file
+latihan. Tunjukkan sebelum dan sesudah
+
+### Jawaban Latihan 2D
+![latihan2d.png](pict_jobsheet2/latihan2d.png)
+bagian atas adalah sebelum mengganti kata server menjadi node. Bagian bawah setelah diganti dengan node.
+
+### Latihan 2E
+Gunakan df -h lalu awk untuk menampilkan filesystem yang penggunaan disk
+di atas 70%.
+
+### Jawaban Latihan 2E
+![latihan2e.png](pict_jobsheet2/latihan2e.png)
+output tersebut menunjukan bahwa tidak ada filesystem yang penggunaan disk nya di atas 70%
+
+### Latihan 2F
+Jalankan sleep 600 &. Temukan PID-nya dengan ps. Hentikan dengan
+SIGTERM. Jelaskan beda SIGTERM vs SIGKILL.
+
+### Jawaban Latihan 2F
+![latihan2f.png](pict_jobsheet2/latihan2f.png)
+PID proses sleep dapat ditemukan menggunakan perintah ps, misalnya PID 113855. Proses dapat dihentikan menggunakan perintah kill yang secara default mengirim sinyal SIGTERM sehingga proses berhenti secara normal. Jika proses tidak merespons, dapat digunakan SIGKILL untuk memaksa proses berhenti secara langsung tanpa proses cleanup.
+### Jawaban Latihan 2G
+Gunakan systemctl –failed. Jika tidak ada yang gagal, pilih satu service
+aktif (misal ssh) dan tampilkan status serta 30 baris log terakhirnya.
+
+### Jawaban Latihan 2G
+![latihan2g.1.png](pict_jobsheet2/latihan2g.1.png)
+![latihan2g.2.png](pict_jobsheet2/latihan2g.2.png)
