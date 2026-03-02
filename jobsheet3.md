@@ -16,9 +16,14 @@ Buatlah script yang:
 ### Hasil: 
 ![Latihan3.1.png](pict_jobsheet3/Latihan3.1.png)
 
-### Prompt: 
+### Script: 
 ```
-ls -lh /var/log/ 2> error.log | \ | sort -k5 -rh | \ | tee large-logs.txt
+#!/bin/bash
+
+ls -lh /var/log/ 2> error.log | \
+sort -k5 -rh | \
+head -10 | \
+tee large-logs.txt
 ```
 
 ## Latihan 3.2
@@ -76,6 +81,15 @@ Buat perintah yang:
 3. Menghitung jumlah file yang ditemukan
 4. Menyimpan daftar path lengkap ke file
 
+### Hasil: 
+![Latihan3.4.png](pict_jobsheet3/Latihan3.4.png)
+
+### Perintah: 
+```
+find / -name "*.conf" 2> /dev/null | tee conf-files.txt | wc -l
+
+```
+
 ## Latihan 3.5
 Implementasikan script backup yang:
 1. Menggunakan tar untuk backup direktori
@@ -83,3 +97,21 @@ Implementasikan script backup yang:
 3. Mencatat stdout ke backup-success.log
 4. Mencatat stderr ke backup-error.log
 5. Menambahkan timestamp di setiap log entry
+
+### Hasil: 
+![Latihan3.5.png](pict_jobsheet3/Latihan3.5.png)
+
+### Script:
+```
+#!/bin/bash
+
+TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+BACKUP_FILE="backup-$TIMESTAMP.tar.gz"
+LOG_FILE="backup-$TIMESTAMP.log"
+
+echo "===== PROSES BACKUP DIMULAI $(date) ====="
+
+tar -czf "$BACKUP_FILE" /etc 2>&1 | tee "$LOG_FILE"
+
+echo "===== PROSES BACKUP SELESAI $(date) ====="
+```
