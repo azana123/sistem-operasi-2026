@@ -3384,5 +3384,9 @@ Hasil:
 ## Percobaan 6: Mencari text pada file
 Prompt:
 ```
-
+grep halo *.txt
+```
+Hasil:
+```
+myerror.txt:/home/fafiq/halo.txt
 ```
