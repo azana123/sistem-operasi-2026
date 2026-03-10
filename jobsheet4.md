@@ -3390,3 +3390,503 @@ Hasil:
 ```
 myerror.txt:/home/fafiq/halo.txt
 ```
+
+## Latihan
+
+### 1. Cobalah urutan perintah berikut :
+$ cd
+$ pwd
+$ ls –al
+$ cd .
+$ pwd
+$ cd ..
+$ pwd
+$ ls -al
+$ cd ..
+$ pwd
+$ ls -al
+$ cd /etc
+$ ls –al | more
+$ cat passwd
+$ cd –
+$ pwd
+
+```
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:~$ cd
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:~$ pwd
+/home/fafiq
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:~$ ls -al
+total 123936
+drwxr-x--- 26 fafiq fafiq      4096 Mar 10 21:02 .
+drwxr-xr-x  3 root  root       4096 Mar  3 23:57 ..
+-rw-------  1 fafiq fafiq     19301 Mar 10 11:06 .bash_history
+-rw-r--r--  1 fafiq fafiq       220 Mar 31  2024 .bash_logout
+-rw-r--r--  1 fafiq fafiq      3901 Mar  9 03:47 .bashrc
+lrwxrwxrwx  1 fafiq fafiq         1 Mar 10 20:57 bye.txt -> z
+drwx------ 20 fafiq fafiq      4096 Mar 10 11:03 .cache
+drwx------ 36 fafiq fafiq      4096 Mar 10 11:03 .config
+drwxr-xr-x  2 fafiq fafiq      4096 Mar  4 01:21 Desktop
+drwxr-xr-x  8 fafiq fafiq      4096 Mar  4 06:54 Documents
+drwxrwxr-x  3 fafiq fafiq      4096 Mar  4 12:50 .dotnet
+drwxr-xr-x  3 fafiq fafiq      4096 Mar  9 22:03 Downloads
+-rw-rw-r--  1 fafiq fafiq   5462976 Mar  7 10:42 fastfetch-linux-amd64.deb
+-rwxrwxr--  1 fafiq fafiq        73 Mar 10 19:10 .fehbg
+-rw-rw-r--  1 fafiq fafiq        57 Mar 10 10:58 .gitconfig
+drwx------  3 fafiq fafiq      4096 Mar  5 19:22 .gnome
+drwxrwxr-x  5 fafiq fafiq      4096 Mar  4 10:59 gnome-terminal
+-rw-rw-r--  1 fafiq fafiq 121241076 Mar  4 02:12 google-chrome-stable_current_amd64.deb
+-rw-rw-r--  3 fafiq fafiq        15 Mar 10 20:52 halo.txt
+drwxrwxr-x 10 fafiq fafiq      4096 Mar  4 23:21 i3lock-color
+drwxr-xr-x  5 fafiq fafiq      4096 Mar  5 19:24 .java
+-rw-------  1 fafiq fafiq        20 Mar 10 10:58 .lesshst
+drwx------  6 fafiq fafiq      4096 Mar  9 03:45 .local
+drwxrwxr-x  4 fafiq fafiq      4096 Mar  9 05:21 lwalpapers
+drwxr-xr-x  2 fafiq fafiq      4096 Mar  4 01:21 Music
+drwxrwxr-x  2 fafiq fafiq      4096 Mar 10 20:55 mydir
+-rw-rw-r--  1 fafiq fafiq     18003 Mar 10 21:06 myerror.txt
+drwxr-xr-x  2 fafiq fafiq      4096 Mar  9 06:15 Pictures
+drwx------  3 fafiq fafiq      4096 Mar  4 12:48 .pki
+-rw-r--r--  1 fafiq fafiq       809 Mar  5 11:41 .profile
+drwxr-xr-x  2 fafiq fafiq      4096 Mar  4 01:21 Public
+drwxrwxr-x  2 fafiq fafiq      4096 Mar  5 11:38 .redhat
+drwx------  8 fafiq fafiq      4096 Mar  5 20:56 snap
+drwx------  2 fafiq fafiq      4096 Mar  4 01:21 .ssh
+-rw-r--r--  1 fafiq fafiq         0 Mar  4 07:02 .sudo_as_admin_successful
+drwxr-xr-x  2 fafiq fafiq      4096 Mar  4 01:21 Templates
+drwxr-xr-x  2 fafiq fafiq      4096 Mar  4 01:21 Videos
+-rw-------  1 fafiq fafiq     12789 Mar  9 06:57 .viminfo
+drwxr-xr-x 15 fafiq fafiq      4096 Mar  5 19:22 Visual_Paradigm_CE_18.0
+drwxrwxr-x  4 fafiq fafiq      4096 Mar  4 12:48 .vscode
+-rw-rw-r--  1 fafiq fafiq       215 Mar  9 08:11 .wget-hsts
+-rw-rw-r--  3 fafiq fafiq        15 Mar 10 20:52 z
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:~$ cd .
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:~$ pwd
+/home/fafiq
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:~$ cd ..
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/home$ pwd
+/home
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/home$ ls -al
+total 12
+drwxr-xr-x  3 root  root  4096 Mar  3 23:57 .
+drwxr-xr-x 23 root  root  4096 Mar  3 23:57 ..
+drwxr-x--- 26 fafiq fafiq 4096 Mar 10 21:02 fafiq
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/home$ cd ..
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/$ pwd
+/
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/$ ls -al
+total 4194404
+drwxr-xr-x  23 root root       4096 Mar  3 23:57 .
+drwxr-xr-x  23 root root       4096 Mar  3 23:57 ..
+lrwxrwxrwx   1 root root          7 Apr 22  2024 bin -> usr/bin
+drwxr-xr-x   2 root root       4096 Feb 26  2024 bin.usr-is-merged
+drwxr-xr-x   4 root root       4096 Mar  4 07:16 boot
+dr-xr-xr-x   2 root root       4096 Feb 15  2025 cdrom
+drwxr-xr-x  20 root root       5140 Mar 10 19:09 dev
+drwxr-xr-x 149 root root      12288 Mar 10 21:13 etc
+drwxr-xr-x   3 root root       4096 Mar  3 23:57 home
+lrwxrwxrwx   1 root root          7 Apr 22  2024 lib -> usr/lib
+lrwxrwxrwx   1 root root          9 Apr 22  2024 lib64 -> usr/lib64
+drwxr-xr-x   2 root root       4096 Apr  8  2024 lib.usr-is-merged
+drwx------   2 root root      16384 Mar  3 23:25 lost+found
+drwxr-xr-x   3 root root       4096 Mar  4 01:21 media
+drwxr-xr-x   2 root root       4096 Feb 15  2025 mnt
+drwxr-xr-x   3 root root       4096 Mar 10 11:03 opt
+dr-xr-xr-x 436 root root          0 Mar 10 19:09 proc
+drwx------   7 root root       4096 Mar  4 17:51 root
+drwxr-xr-x  36 root root        920 Mar 10 21:13 run
+lrwxrwxrwx   1 root root          8 Apr 22  2024 sbin -> usr/sbin
+drwxr-xr-x   2 root root       4096 Mar 31  2024 sbin.usr-is-merged
+drwxr-xr-x  19 root root       4096 Mar  5 21:09 snap
+drwxr-xr-x   2 root root       4096 Feb 15  2025 srv
+-rw-------   1 root root 4294967296 Mar  3 23:57 swap.img
+dr-xr-xr-x  13 root root          0 Mar 10 19:09 sys
+drwxrwxrwt  21 root root       4096 Mar 10 21:20 tmp
+drwxr-xr-x  12 root root       4096 Feb 15  2025 usr
+drwxr-xr-x  14 root root       4096 Mar  4 01:20 var
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/$ cd /etc
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ ls -al | more
+total 1244
+drwxr-xr-x 149 root                 root                 12288 Mar 10 21:13 .
+drwxr-xr-x  23 root                 root                  4096 Mar  3 23:57 ..
+-rw-r--r--   1 root                 root                  3444 Jul  6  2023 adduser.conf
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 alsa
+drwxr-xr-x   2 root                 root                 12288 Mar 10 21:13 alternatives
+-rw-r--r--   1 root                 root                   335 Apr  8  2024 anacrontab
+drwxr-xr-x   3 root                 root                  4096 Mar  9 03:42 apache2
+-rw-r--r--   1 root                 root                   433 Apr  8  2024 apg.conf
+drwxr-xr-x   5 root                 root                  4096 Feb 15  2025 apm
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 apparmor
+drwxr-xr-x   9 root                 root                 12288 Mar  5 21:03 apparmor.d
+drwxr-xr-x   3 root                 root                  4096 Mar  4 00:08 apport
+drwxr-xr-x   9 root                 root                  4096 Mar  3 23:21 apt
+drwxr-xr-x   3 root                 root                  4096 Mar  4 00:08 avahi
+-rw-r--r--   1 root                 root                  2319 Mar 31  2024 bash.bashrc
+-rw-r--r--   1 root                 root                    45 Jan 25  2020 bash_completion
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:19 bash_completion.d
+-rw-r--r--   1 root                 root                   367 Aug  2  2022 bindresvport.blacklist
+drwxr-xr-x   2 root                 root                  4096 Apr 19  2024 binfmt.d
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 bluetooth
+-rw-r-----   1 root                 root                    33 Feb 15  2025 brlapi.key
+drwxr-xr-x   7 root                 root                  4096 Feb 15  2025 brltty
+-rw-r--r--   1 root                 root                 30571 Mar 31  2024 brltty.conf
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 ca-certificates
+-rw-r--r--   1 root                 root                  6288 Feb 15  2025 ca-certificates.conf
+drwxr-s---   2 root                 dip                   4096 Feb 15  2025 chatscripts
+drwxr-xr-x   5 root                 root                  4096 Mar  4 07:15 cloud
+drwxr-xr-x   2 colord               colord                4096 Mar  4 01:21 colord
+drwxr-xr-x   2 root                 root                  4096 Mar  3 23:26 console-setup
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 cracklib
+drwx------   2 root                 root                  4096 Apr 19  2024 credstore
+drwx------   2 root                 root                  4096 Apr 19  2024 credstore.encrypted
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 cron.d
+drwxr-xr-x   2 root                 root                  4096 Mar 10 21:13 cron.daily
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 cron.hourly
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 cron.monthly
+-rw-r--r--   1 root                 root                  1136 Mar 31  2024 crontab
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 cron.weekly
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 cron.yearly
+drwxr-xr-x   5 root                 lp                    4096 Mar 10 19:10 cups
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 cupshelpers
+drwxr-xr-x   4 root                 root                  4096 Feb 15  2025 dbus-1
+drwxr-xr-x   4 root                 root                  4096 Feb 15  2025 dconf
+-rw-r--r--   1 root                 root                  2967 Apr 12  2024 debconf.conf
+-rw-r--r--   1 root                 root                    11 Apr 22  2024 debian_version
+drwxr-xr-x   2 root                 root                  4096 Mar  4 00:08 debuginfod
+drwxr-xr-x   3 root                 root                  4096 Mar 10 11:03 default
+-rw-r--r--   1 root                 root                  1706 Jul  6  2023 deluser.conf
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 depmod.d
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 dhcp
+-rw-r--r--   1 root                 root                  1429 Mar 31  2024 dhcpcd.conf
+drwxr-xr-x   2 root                 root                  4096 Mar  4 00:01 dictionaries-common
+drwxr-xr-x   4 root                 root                  4096 Mar  4 07:19 dpkg
+-rw-r--r--   1 root                 root                   685 Apr  8  2024 e2scrub.conf
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 emacs
+-rw-r--r--   1 root                 root                   107 Mar  5 11:41 environment
+drwxr-xr-x   2 root                 root                  4096 Mar  5 11:28 environment.d
+-rw-r--r--   1 root                 root                  1853 Oct 18  2022 ethertypes
+drwxr-xr-x   3 root                 root                  4096 Mar  5 21:03 firebird
+drwxr-xr-x   5 root                 root                  4096 Feb 15  2025 fonts
+-rw-r--r--   1 root                 root                    20 Apr  4  2024 fprintd.conf
+-rw-r--r--   1 root                 root                   595 Mar  3 23:57 fstab
+-rw-r--r--   1 root                 root                   694 Apr  8  2024 fuse.conf
+drwxr-xr-x   4 root                 root                  4096 Mar  4 07:15 fwupd
+-rw-r--r--   1 root                 root                  2584 Jan 31  2024 gai.conf
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 gdb
+drwxr-xr-x   8 root                 root                  4096 Mar  4 07:16 gdm3
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 geoclue
+drwxr-xr-x   4 root                 root                  4096 Feb 15  2025 ghostscript
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 glvnd
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 gnome
+drwxr-xr-x   2 gnome-remote-desktop gnome-remote-desktop  4096 Feb 15  2025 gnome-remote-desktop
+drwxr-xr-x   2 root                 root                  4096 Mar  4 00:08 gnutls
+-rw-r--r--   1 root                 root                  3986 Dec  3 22:01 gprofng.rc
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 groff
+-rw-r--r--   1 root                 root                  1122 Mar 10 21:13 group
+-rw-r--r--   1 root                 root                  1107 Mar  5 19:42 group-
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 grub.d
+-rw-r-----   1 root                 shadow                 946 Mar 10 21:13 gshadow
+-rw-r-----   1 root                 shadow                 934 Mar  5 19:42 gshadow-
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 gss
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 gtk-2.0
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:16 gtk-3.0
+-rw-r--r--   1 root                 root                  4436 Oct  6  2022 hdparm.conf
+-rw-r--r--   1 root                 root                    92 Apr 22  2024 host.conf
+-rw-r--r--   1 root                 root                    29 Mar  4 00:01 hostname
+-rw-r--r--   1 root                 root                   243 Mar  4 00:01 hosts
+-rw-r--r--   1 root                 root                   411 Feb 15  2025 hosts.allow
+-rw-r--r--   1 root                 root                   711 Feb 15  2025 hosts.deny
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 hp
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:23 i3
+-rw-r--r--   1 root                 root                  2813 Aug 29  2017 i3blocks.conf
+-rw-r--r--   1 root                 root                  1001 Nov  9  2021 i3status.conf
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 ifplugd
+drwxr-xr-x   2 root                 root                  4096 Mar  4 10:09 ImageMagick-6
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 init
+drwxr-xr-x   2 root                 root                  4096 Mar  9 03:37 init.d
+drwxr-xr-x   5 root                 root                  4096 Mar  4 07:15 initramfs-tools
+-rw-r--r--   1 root                 root                  1875 Mar 31  2024 inputrc
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:16 insserv.conf.d
+drwxr-xr-x   2 root                 root                  4096 Mar  4 00:08 ipp-usb
+drwxr-xr-x   4 root                 root                  4096 Mar  4 07:15 iproute2
+-rw-r--r--   1 root                 root                    26 Feb  6 14:23 issue
+-rw-r--r--   1 root                 root                    19 Feb  6 14:23 issue.net
+drwxr-xr-x   3 root                 root                  4096 Mar  5 11:03 .java
+drwxr-xr-x   5 root                 root                  4096 Mar  5 11:03 java-21-openjdk
+drwxr-xr-x   6 root                 root                  4096 Mar  3 23:56 kernel
+-rw-r--r--   1 root                 root                  1308 Mar 31  2024 kerneloops.conf
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 krb5.conf.d
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 ldap
+-rw-r--r--   1 root                 root                 77159 Mar 10 21:13 ld.so.cache
+-rw-r--r--   1 root                 root                    34 Aug  2  2022 ld.so.conf
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:19 ld.so.conf.d
+-rw-r--r--   1 root                 root                   267 Apr 22  2024 legal
+-rw-r--r--   1 root                 root                    27 Apr  8  2024 libao.conf
+-rw-r--r--   1 root                 root                   191 Mar 31  2024 libaudit.conf
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 libblockdev
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 libibverbs.d
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 libnl-3
+drwxr-xr-x   2 root                 root                  4096 Apr  8  2024 libpaper.d
+drwxr-xr-x   3 root                 root                  4096 Mar  5 21:03 libreoffice
+drwxr-xr-x   4 root                 root                  4096 Mar  9 03:42 lighttpd
+-rw-r--r--   1 root                 root                  2996 Mar 30  2024 locale.alias
+-rw-r--r--   1 root                 root                    17 Mar  4 01:20 locale.conf
+-rw-r--r--   1 root                 root                  9563 Mar  4 01:20 locale.gen
+lrwxrwxrwx   1 root                 root                    32 Mar  4 01:20 localtime -> /usr/share/zoneinfo/Asia/Jakarta
+drwxr-xr-x   4 root                 root                  4096 Feb 15  2025 logcheck
+-rw-r--r--   1 root                 root                 12345 Feb 22  2024 login.defs
+-rw-r--r--   1 root                 root                   586 Apr  8  2024 logrotate.conf
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 logrotate.d
+-rw-r--r--   1 root                 root                   104 Feb  6 14:22 lsb-release
+-r--r--r--   1 root                 root                    33 Mar  3 23:26 machine-id
+-rw-r--r--   1 root                 root                   111 Mar 31  2024 magic
+-rw-r--r--   1 root                 root                   111 Mar 31  2024 magic.mime
+-rw-r--r--   1 root                 root                  5230 Apr  8  2024 manpath.config
+-rw-r--r--   1 root                 root                 75113 Jul 12  2023 mime.types
+-rw-r--r--   1 root                 root                   744 Apr  8  2024 mke2fs.conf
+drwxr-xr-x   4 root                 root                  4096 Feb 15  2025 ModemManager
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 modprobe.d
+-rw-r--r--   1 root                 root                   212 Feb 15  2025 modules
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 modules-load.d
+lrwxrwxrwx   1 root                 root                    19 Feb 15  2025 mtab -> ../proc/self/mounts
+drwxr-xr-x   3 root                 root                  4096 Mar  5 21:03 mysql
+-rw-r--r--   1 root                 root                 11424 May 23  2023 nanorc
+-rw-r--r--   1 root                 root                   767 Mar 31  2024 netconfig
+drwxr-xr-x   2 root                 root                  4096 Mar  5 19:03 netplan
+drwxr-xr-x   6 root                 root                  4096 Feb 15  2025 network
+drwxr-xr-x   8 root                 root                  4096 Feb 15  2025 networkd-dispatcher
+drwxr-xr-x   8 root                 root                  4096 Mar  4 07:15 NetworkManager
+-rw-r--r--   1 root                 root                    91 Apr 22  2024 networks
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 newt
+-rwxr-xr-x   1 root                 root                   243 Oct 19  2023 nftables.conf
+-rw-r--r--   1 root                 root                   594 Feb 15  2025 nsswitch.conf
+drwxr-xr-x   4 root                 root                  4096 Mar  4 00:08 openvpn
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 opt
+lrwxrwxrwx   1 root                 root                    21 Feb  6 14:23 os-release -> ../usr/lib/os-release
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 PackageKit
+-rw-r--r--   1 root                 root                   552 Oct 14  2022 pam.conf
+drwxr-xr-x   2 root                 root                  4096 Mar  4 23:25 pam.d
+-rw-r--r--   1 root                 root                     3 Feb 15  2025 papersize
+-rw-r--r--   1 root                 root                  2861 Mar  3 23:57 passwd
+-rw-r--r--   1 root                 root                  2815 Feb 15  2025 passwd-
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 pcmcia
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 perl
+drwxr-xr-x   4 root                 root                  4096 Feb 15  2025 pki
+drwxr-xr-x   2 root                 root                  4096 Mar 31  2024 plymouth
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 pm
+-rw-r--r--   1 root                 root                  7649 Feb 15  2025 pnm2ppa.conf
+drwxr-xr-x   4 root                 root                  4096 Feb 15  2025 polkit-1
+drwxr-xr-x   8 root                 dip                   4096 Feb 15  2025 ppp
+lrwxrwxrwx   1 root                 root                    18 Mar  4 00:08 printcap -> /run/cups/printcap
+-rw-r--r--   1 root                 root                   582 Apr 22  2024 profile
+drwxr-xr-x   2 root                 root                  4096 Mar  4 14:17 profile.d
+-rw-r--r--   1 root                 root                  3144 Oct 18  2022 protocols
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 pulse
+-rw-------   1 root                 root                     0 Feb 15  2025 .pwd.lock
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 python3
+drwxr-xr-x   2 root                 root                  4096 Mar  4 00:08 python3.12
+drwxr-xr-x   2 root                 root                  4096 Mar  9 03:37 rc0.d
+drwxr-xr-x   2 root                 root                  4096 Mar  9 03:37 rc1.d
+drwxr-xr-x   2 root                 root                  4096 Mar  9 03:37 rc2.d
+drwxr-xr-x   2 root                 root                  4096 Mar  9 03:37 rc3.d
+drwxr-xr-x   2 root                 root                  4096 Mar  9 03:37 rc4.d
+drwxr-xr-x   2 root                 root                  4096 Mar  9 03:37 rc5.d
+drwxr-xr-x   2 root                 root                  4096 Mar  9 03:37 rc6.d
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 rcS.d
+lrwxrwxrwx   1 root                 root                    39 Feb 15  2025 resolv.conf -> ../run/systemd/resolve/stub-resolv.conf
+-rw-r--r--   1 root                 root                   862 Feb 15  2025 .resolv.conf.systemd-resolved.bak
+lrwxrwxrwx   1 root                 root                    13 Apr  8  2024 rmt -> /usr/sbin/rmt
+-rw-r--r--   1 root                 root                   911 Oct 18  2022 rpc
+-rw-r--r--   1 root                 root                  1213 Mar 22  2024 rsyslog.conf
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 rsyslog.d
+-rw-r--r--   1 root                 root                  5772 Jan  7  2024 rygel.conf
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 sane.d
+drwxr-xr-x   4 root                 root                  4096 Mar  4 00:08 security
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 selinux
+-rw-r--r--   1 root                 root                 10593 Mar 31  2024 sensors3.conf
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 sensors.d
+-rw-r--r--   1 root                 root                 12813 Mar 28  2021 services
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 sgml
+-rw-r-----   1 root                 shadow                1338 Mar  4 01:20 shadow
+-rw-r-----   1 root                 shadow                1338 Mar  3 23:57 shadow-
+-rw-r--r--   1 root                 root                   118 Feb 15  2025 shells
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 skel
+drwxr-xr-x   2 root                 root                  4096 Mar  4 00:08 snmp
+drwxr-xr-x   4 root                 root                  4096 Feb 15  2025 speech-dispatcher
+drwxr-xr-x   3 root                 root                  4096 Mar  4 07:15 ssh
+drwxr-xr-x   4 root                 root                  4096 Mar  4 00:08 ssl
+drwx--x--x   3 root                 root                  4096 Feb 15  2025 sssd
+-rw-r--r--   1 root                 root                    19 Mar  3 23:57 subgid
+-rw-r--r--   1 root                 root                     0 Feb 15  2025 subgid-
+-rw-r--r--   1 root                 root                    19 Mar  3 23:57 subuid
+-rw-r--r--   1 root                 root                     0 Feb 15  2025 subuid-
+-rw-r--r--   1 root                 root                  4343 Apr  8  2024 sudo.conf
+-r--r-----   1 root                 root                  1800 Jan 30  2024 sudoers
+drwxr-xr-x   2 root                 root                  4096 Mar  4 00:08 sudoers.d
+-rw-r--r--   1 root                 root                  9804 Apr  8  2024 sudo_logsrvd.conf
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 supercat
+-rw-r--r--   1 root                 root                  2209 Mar 24  2024 sysctl.conf
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 sysctl.d
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 sysstat
+drwxr-xr-x   6 root                 root                  4096 Mar  4 07:15 systemd
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 terminfo
+drwxr-xr-x   2 root                 root                  4096 Mar  3 23:57 thermald
+-rw-r--r--   1 root                 root                    13 Mar  4 01:20 timezone
+drwxr-xr-x   2 root                 root                  4096 Apr 19  2024 tmpfiles.d
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:15 ubuntu-advantage
+-rw-r--r--   1 root                 root                  1260 Jan 27  2023 ucf.conf
+drwxr-xr-x   4 root                 root                  4096 Mar  4 07:15 udev
+drwxr-xr-x   2 root                 root                  4096 Mar  4 00:08 udisks2
+drwxr-xr-x   3 root                 root                  4096 Feb 15  2025 ufw
+-rw-r--r--   1 root                 root                   208 Feb 15  2025 .updated
+-rw-r--r--   1 root                 root                   583 Aug  1  2023 updatedb.conf
+drwxr-xr-x   3 root                 root                  4096 Mar  4 07:16 update-manager
+drwxr-xr-x   2 root                 root                  4096 Mar  4 07:16 update-motd.d
+drwxr-xr-x   2 root                 root                  4096 Apr  8  2024 update-notifier
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 UPower
+-rw-r--r--   1 root                 root                  1523 Apr  8  2024 usb_modeswitch.conf
+drwxr-xr-x   2 root                 root                  4096 Dec 17  2023 usb_modeswitch.d
+lrwxrwxrwx   1 root                 root                    16 Feb 15  2025 vconsole.conf -> default/keyboard
+-rw-r--r--   1 root                 root                    51 Mar  7  2022 vdpau_wrapper.cfg
+drwxr-xr-x   2 root                 root                  4096 Mar  4 00:08 vim
+lrwxrwxrwx   1 root                 root                    23 Feb 26  2024 vtrgb -> /etc/alternatives/vtrgb
+drwxr-xr-x   5 root                 root                  4096 Feb 15  2025 vulkan
+drwxr-xr-x   2 root                 root                  4096 Mar  4 10:09 w3m
+-rw-r--r--   1 root                 root                  4942 Jun 19  2024 wgetrc
+drwxr-xr-x   2 root                 root                  4096 Mar  3 23:57 wpa_supplicant
+drwxr-xr-x  12 root                 root                  4096 Feb 15  2025 X11
+-rw-r--r--   1 root                 root                   681 Apr  8  2024 xattr.conf
+drwxr-xr-x   7 root                 root                  4096 Mar  4 07:23 xdg
+drwxr-xr-x   2 root                 root                  4096 Feb 15  2025 xml
+-rw-r--r--   1 root                 root                   460 Jan 20  2023 zsh_command_not_found
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ 
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ cat psswd
+cat: psswd: No such file or directory
+fafiq@fafiq-IdeaPad-Slim-5-14AKP10:/etc$ cat passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+```
+### 2. Lanjutkan penelusuran pohon pada sistem file menggunakan cd, ls, pwd dan cat. Telusuri direktory /bin, /usr/bin, /sbin, /tmp dan /boot.
+#### Bin
+```
+cd /bin
+ls -l
+```
+#### /usr/bin
+```
+cd /usr/bin
+ls -l
+```
+#### /sbin
+```
+cd /sbin
+ls -l
+```
+#### /tmp
+```
+cd /tmp
+ls -l
+```
+#### /boot
+```
+cd /boot
+ls -l
+```
+
+### 3. Telusuri direktory /dev. Identifikasi perangkat yang tersedia. Identifikasi tty (termninal) Anda (ketik who am i); siapa pemilih tty Anda (gunakan ls –l).
+```
+ls -l /dev
+who
+tty
+ls -l /dev/tty2
+```
+
+### 4. Telusuri derectory /proc. Tampilkan isi file interrupts, devices, cpuinfo, meminfo dan uptime menggunakan perintah cat. Dapatkah Anda melihat mengapa directory /proc disebut pseudo -filesystem yang memungkinkan akses ke struktur data kernel ?
+```
+ls /proc
+cat /proc/interrupts
+cat /proc/devices
+cat /proc/cpuinfo
+cat /proc/meminfo
+cat /proc/uptime
+```
+### 5. Ubahlah direktory home ke user lain secara langsung menggunakan cd ~username.
+```
+cat /etc/passwd
+cd ~username
+pwd
+```
+### 6. Ubah kembali ke direktory home Anda.
+```
+cd ~
+pwd
+```
+### 7. Buat subdirektory work dan play.
+```
+cd home/fafiq
+mkdir work play
+```
+### 8. Hapus subdirektory work.
+```
+rmdir work
+ls
+```
+### 9. Copy file /etc/passwd ke direktory home Anda.
+```
+cp /etc/passwd ~
+ls ~
+```
+
+### 10. Pindahkan ke subdirectory play
+```
+cp passwd play
+ls lay
+```
+
+### 11. Ubahlah ke subdirektory play dan buat symbolic link dengan nama terminal yang menunjuk ke perangkat tty. Apa yang terjadi jika melakukan hard link ke perangkat tty ?
+```
+cd play
+pwd
+ln -s /dev/tty terminal
+ls -l
+```
+Masuk ke direktori play dengan perintah cd play, lalu buat symbolic link ke perangkat tty menggunakan ln -s /dev/tty terminal. Symbolic link ini menunjuk ke perangkat /dev/tty. Jika mencoba membuat hard link ke perangkat tty, sistem biasanya akan menolak atau menampilkan error karena hard link tidak diperbolehkan untuk device file seperti yang ada di direktori /dev.
+
+### 12. Buatlah file bernama hello.txt yang berisi kata ”hello word”. Dapatkah Anda gunakan ”cp” menggunakan ”terminal” sebagai file asal untuk menghasilkan efek yang sama ?
+```
+echo "hello word" > hello.txt
+cat hello.txt
+```
+File hello.txt dapat dibuat menggunakan perintah echo "hello word" > hello.txt, sehingga berisi kata “hello word”. Tidak bisa menggunakan perintah cp terminal hello.txt untuk menghasilkan efek yang sama, karena terminal adalah device file yang menunjuk ke perangkat tty, bukan file teks biasa, sehingga isinya berbeda dan bukan kata “hello word”.
+
+### 13. Menyalin file ke terminal menampilkan isi file di layar tanpa membuat file baru.
+### 14. Masih direktory home, copy keseluruhan direktory play ke direktory bernama work menggunakan symbolic link.
+```
+cd ~
+pwd
+mkdir work
+cp -rs /home/fafiq/play/* /home/fafiq/work/
+ls -l work
+```
+### 15. Hapus direktory work dan isinya dengan satu perintah
+```
+rm -rf work
+```
