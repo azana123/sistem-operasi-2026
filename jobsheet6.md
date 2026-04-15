@@ -1116,10 +1116,216 @@ ps aux -L
 USER PID LWP %CPU NLWP %MEM VSZ RSS TTY
 ```
 Selain menampilkan proses utana, ps aux -L juga menampilkan LWP (Light weight process)
- 
+
 ### Praktikum 6.2 — Mengamati Siklus Hidup Proses
+
+#### Prompt
+```
+sleep 60 &
+ps aux | grep sleep
+```
+
+#### Hasil
+```
+[1] 9663
+root        1919  0.0  0.0   3220  1960 ?        S    20:51   0:00 sleep 3600
+fafiq       9663  0.0  0.0  16964  2272 pts/1    S    21:30   0:00 sleep 60
+fafiq       9665  0.0  0.0  17820  2496 pts/1    S+   21:30   0:00 grep --color=auto sleep
+
+```
+
+#### Prompt
+```
+ls /tmp
+echo " Sukses : $?"
+ls /direktori - tidak - ada
+echo " Gagal : $?"
+```
+
+#### Hasil
+```
+snap-private-tmp                                                                       systemd-private-0c6458ac21a946b99aeceadb3de8d495-switcheroo-control.service-HUKXA8
+systemd-private-0c6458ac21a946b99aeceadb3de8d495-bluetooth.service-R7WfKc              systemd-private-0c6458ac21a946b99aeceadb3de8d495-systemd-logind.service-aKdzxv
+systemd-private-0c6458ac21a946b99aeceadb3de8d495-colord.service-rPQxQE                 systemd-private-0c6458ac21a946b99aeceadb3de8d495-systemd-oomd.service-m6WuXI
+systemd-private-0c6458ac21a946b99aeceadb3de8d495-fwupd.service-3ruhP4                  systemd-private-0c6458ac21a946b99aeceadb3de8d495-systemd-resolved.service-jAjhYg
+systemd-private-0c6458ac21a946b99aeceadb3de8d495-ModemManager.service-MbFxht           systemd-private-0c6458ac21a946b99aeceadb3de8d495-systemd-timesyncd.service-JiWRbU
+systemd-private-0c6458ac21a946b99aeceadb3de8d495-polkit.service-jwhDpc                 systemd-private-0c6458ac21a946b99aeceadb3de8d495-upower.service-G2hTtF
+systemd-private-0c6458ac21a946b99aeceadb3de8d495-power-profiles-daemon.service-Vv1O9P
+ Sukses : 0
+ls: cannot access '/direktori': No such file or directory
+ls: cannot access '-': No such file or directory
+ls: cannot access 'tidak': No such file or directory
+ls: cannot access '-': No such file or directory
+ls: cannot access 'ada': No such file or directory
+```
+
+### Latihan Praktikum 6.2
+#### Soal
+1. Jalankan sleep 120 & dan amati kolom STAT pada ps aux. Kondisi apa yang ditampilkan? Mengapa proses sleep berada di kondisi tersebut?
+2. Jalankan beberapa perintah yang berhasil dan yang gagal, lalu catat exit code masing-masing. Pola apa yang Anda temukan?
+
+#### Jawaban
+1. Kondisi STAT pada sleep 120 & adalah S yang artinya sleeping atau menunggu sampai selama waktu tertentu (120 detik)
+```
+fafiq      10982  0.0  0.0  16964  2276 pts/1    S    21:48   0:00 sleep 200
+```
+2. Untuk exit code program yang berhasil bernilai 0 dan yang salah bernilai selain 0
+
 ### Praktikum 6.3 — Mengatur Prioritas Proses
+
+#### Prompt
+```
+nice -n 10 sleep 300 &
+```
+
+#### Hasil
+```
+[1] 11804
+```
+
+#### Prompt
+```
+ps aux | grep sleep
+```
+
+#### Hasil
+```
+root       11320  0.0  0.0   3220  2000 ?        S    21:51   0:00 sleep 3600
+fafiq      11767  0.0  0.0  16964  2276 ?        SN   21:56   0:00 sleep 300
+fafiq      11804  0.0  0.0  16964  2276 pts/2    SN   21:56   0:00 sleep 300
+fafiq      11927  0.0  0.0  16964  2276 pts/2    SN   22:00   0:00 sleep 300
+fafiq      11933  0.0  0.0  17820  2496 pts/2    S+   22:00   0:00 grep --color=auto sleep
+```
+
+#### Prompt
+```
+renice -n 15 -p 11927
+ps -p 11927 -o pid,ni,cmd
+```
+#### Hasil
+```
+[1]-  Done                    nice -n 10 sleep 300
+    PID  NI CMD
+  11927  15 sleep 300
+```
+
+### Latihan Praktikum 6.3
+#### Soal
+1. Jalankan nice -n 5 sleep 200 & dan verifikasi nilai NI-nya dengan ps.
+2. Ubah nilai nice menjadi 10 menggunakan renice, lalu verifikasi kembali.
+3. Coba ubah nilai nice menjadi -5 tanpa sudo. Apa yang terjadi? Mengapa Linux membatasi hal ini untuk user biasa?
+
+#### Jawaban
+1. Berdasarkan hasil percobaan, didapatkan hasil sebagai berikut
+```
+fafiq@fafiq-ubuntu:~$ nice -n 5 sleep 300 &
+[3] 12980
+fafiq@fafiq-ubuntu:~$ ps aux | grep sleep
+root       11320  0.0  0.0   3220  2000 ?        S    21:51   0:00 sleep 3600
+fafiq      12878  0.0  0.0  16964  2276 pts/2    SN   22:14   0:00 sleep 300
+fafiq      12924  0.0  0.0  16964  2276 pts/2    SN   22:15   0:00 sleep 300
+fafiq      12980  0.0  0.0  16964  2276 pts/2    SN   22:17   0:00 sleep 300
+fafiq      12982  0.0  0.0  17820  2496 pts/2    S+   22:17   0:00 grep --color=auto sleep
+fafiq@fafiq-ubuntu:~$ ps -p 12980 -o pid,ni,cmd
+renice -n 10 -p 12980
+ps -p 12980 -o pid,ni,cmd
+    PID  NI CMD
+  12980   5 sleep 300
+```
+didapatkan hasil NI nya adalah 5
+
+2. Berdasarkan hasil percobaan, didapatka hasil sebagai berikut
+```
+12980 (process ID) old priority 5, new priority 10
+    PID  NI CMD
+  12980  10 sleep 300
+```
+
+3. Ketika mengubah nilai nice menjadi negatif, akan muncul error permission denied karena butuh otoritas yang lebih tinggi (sudo)
+
 ### Praktikum 6.4 — Mengirim Sinyal ke Proses
+#### Prompt
+```
+sleep 500 &
+sleep 600 &
+sleep 700 &
+ps aux | grep -v grep | grep sleep
+```
+
+#### Hasil
+```
+[1] 13322
+[2] 13323
+[3] 13324
+root       11320  0.0  0.0   3220  2000 ?        S    21:51   0:00 sleep 3600
+fafiq      13322  0.0  0.0  16964  2272 pts/2    S    22:23   0:00 sleep 500
+fafiq      13323  0.0  0.0  16964  2276 pts/2    S    22:23   0:00 sleep 600
+fafiq      13324  0.0  0.0  16964  2268 pts/2    S    22:23   0:00 sleep 700
+```
+
+#### Prompt
+```
+kill 13322          
+ps aux | grep -v grep | grep sleep
+```
+
+#### Hasil
+```
+root       11320  0.0  0.0   3220  2000 ?        S    21:51   0:00 sleep 3600
+fafiq      13323  0.0  0.0  16964  2276 pts/2    S    22:23   0:00 sleep 600
+fafiq      13324  0.0  0.0  16964  2268 pts/2    S    22:23   0:00 sleep 700
+```
+
+#### Prompt
+```
+kill -SIGSTOP 13323          
+ps aux | grep sleep
+```
+
+#### Hasil
+```
+root       11320  0.0  0.0   3220  2000 ?        S    21:51   0:00 sleep 3600
+fafiq      13323  0.0  0.0  16964  2276 pts/2    T    22:23   0:00 sleep 600
+fafiq      13324  0.0  0.0  16964  2268 pts/2    S    22:23   0:00 sleep 700
+fafiq      13349  0.0  0.0  17820  2492 pts/2    S+   22:24   0:00 grep --color=auto sleep
+```
+
+#### Prompt
+```
+kill -SIGCONT 13323          
+ps aux | grep sleep
+```
+
+#### Hasil
+```
+root       11320  0.0  0.0   3220  2000 ?        S    21:51   0:00 sleep 3600
+fafiq      13323  0.0  0.0  16964  2276 pts/2    S    22:23   0:00 sleep 600
+fafiq      13324  0.0  0.0  16964  2268 pts/2    S    22:23   0:00 sleep 700
+fafiq      13356  0.0  0.0  17820  2492 pts/2    S+   22:24   0:00 grep --color=auto sleep
+```
+
+#### Prompt
+```
+pkill sleep
+```
+
+#### Hasil
+```
+pkill: killing pid 11320 failed: Operation not permitted
+[2]-  Terminated              sleep 600
+[3]+  Terminated              sleep 700
+```
+### Latihan Praktikum 6.4
+#### Soal
+1. Jalankan sleep 400 &, kirim SIGSTOP, dan amati perubahan kolom STAT. Kondisi apa yang muncul?
+2. Kirim SIGCONT dan verifikasi proses kembali berjalan.
+3. Hentikan proses dengan SIGTERM lalu verifikasi sudah tidak ada. Kapan Anda memilih SIGKILL daripada SIGTERM?
+
+#### Jawaban
+1. Kodisi yang muncul adalah STAT berubah menjadi T karena sedang dijeda
+2. Kondisi yang muncul adalah STAT berubah menjadi S karena perintah sleep dijalankan kembali setelah dijeda pada sinyal SIGSTOP
+3. Gunakan SIGKILL jika proses tidak merespon SIGTERM atau proses sedang hang/freeze dan tidak bisa dihentikan dengan cara biasa
+
 ### Praktikum 6.5 — Manajemen Job Foreground dan Background
 ### Praktikum 6.6 — Pemantauan Proses
 
