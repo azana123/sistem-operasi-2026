@@ -1327,9 +1327,163 @@ pkill: killing pid 11320 failed: Operation not permitted
 3. Gunakan SIGKILL jika proses tidak merespon SIGTERM atau proses sedang hang/freeze dan tidak bisa dihentikan dengan cara biasa
 
 ### Praktikum 6.5 — Manajemen Job Foreground dan Background
+#### Prompt
+```
+sleep 200 &
+sleep 300 &
+sleep 400 &
+jobs
+```
+
+#### Hasil
+```
+sleep 300 &
+sleep 400 &
+jobs
+[1] 8305
+[2] 8306
+[3] 8307
+[1]   Running                 sleep 200 &
+[2]-  Running                 sleep 300 &
+[3]+  Running                 sleep 400 &
+```
+
+#### Prompt
+```
+fg %1
+# Tekan Ctrl +Z untuk menjeda
+bg %1
+jobs
+```
+
+#### Hasil
+```
+sleep 200
+^Z
+[1]+  Stopped                 sleep 200
+jobs
+[1]+ sleep 200 &
+[1]   Running                 sleep 200 &
+[2]-  Running                 sleep 300 &
+[3]+  Running                 sleep 400 &
+```
+
+#### Prompt
+```
+kill %1 %2 %3
+jobs
+
+```
+
+#### Hasil
+```
+jobs
+[1]   Running                 sleep 200 &
+[2]-  Running                 sleep 300 &
+[3]+  Running                 sleep 400 &
+```
+
+### Latihan Praktikum 6.5
+#### Soal
+1. Jalankan top di foreground. Apa yang terjadi di terminal?
+2. Tekan Ctrl+Z dan cek statusnya dengan jobs. Kondisi apa yang ditampilkan?
+3. Pindahkan ke background dengan bg. Apakah top dapat berjalan dengan baik di background? Mengapa?
+4. Kembalikan ke foreground dengan fg, lalu keluar dengan q
+
+#### Jawaban
+1. Yang terjadi adalah terminal terkunci oleh top dimana user tidak bisa mengetik command lain sebelum top dihentikan karena top berjalan di foreground
+2. Status yang muncul adalah stopped karena ctrl+z mengirim sinyal SIGSTOP
+3. top tidak berjaland engan baik di background arena top butuh interactive ui di terminal dan karena top berjalan di backgound maka tidak punya kontrol atas layar
+4. Untuk mengembalikan ke foreground begini commandnya
+```
+fg %1  #lalu tekan q
+```
+
 ### Praktikum 6.6 — Pemantauan Proses
+#### Prompt
+```
+ps aux -- sort = -% cpu | head -10
+ps aux -- sort = -% mem | head -10
+```
+
+#### Hasil
+```
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+fafiq       4315  7.6  6.1 12635904 958592 ?     Sl   13:59   3:19 /snap/firefox/8107/usr/lib/firefox/firefox
+fafiq       7550  5.7  2.1 1465102452 342384 ?   Sl   14:13   1:40 /usr/share/code/code --type=zygote
+fafiq       3340  4.7  2.6 5607432 406856 ?      Ssl  13:58   2:04 /usr/bin/gnome-shell
+fafiq       6694  2.4  3.0 3292696 479604 ?      Sl   14:05   0:54 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44518 -prefMapHandle 1:283466 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {79eb99a6-8a61-492c-9639-03f30d60a670} -parentPid 4315 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 20 tab
+fafiq       7482  1.5  1.5 51387312 241204 ?     Sl   14:13   0:28 /usr/share/code/code --type=zygote --no-zygote-sandbox
+fafiq       7662  1.1  1.7 1461342684 271712 ?   Sl   14:13   0:19 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=7459 --enable-crash-reporter=9f087d08-a067-4f53-bfef-10d3b83556b8,no_channel --user-data-dir=/home/fafiq/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,8274984242347241118,10996704503328616168,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708990997080739
+fafiq       7429  0.8  1.6 1478504836 251364 ?   SLl  14:13   0:14 /usr/share/code/code
+fafiq       5355  0.5  2.0 2883356 325924 ?      Sl   13:59   0:15 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43070 -prefMapHandle 1:283466 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {50852c97-263a-47e6-b1e1-1a350b8b2930} -parentPid 4315 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 7 tab
+root         761  0.5  0.0      0     0 ?        S    13:57   0:13 [irq/105-rtw89_pci]
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+fafiq       4315  7.6  6.1 12635904 958592 ?     Sl   13:59   3:19 /snap/firefox/8107/usr/lib/firefox/firefox
+fafiq       6694  2.4  3.0 3292696 479604 ?      Sl   14:05   0:54 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44518 -prefMapHandle 1:283466 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {79eb99a6-8a61-492c-9639-03f30d60a670} -parentPid 4315 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 20 tab
+fafiq       3340  4.7  2.6 5607432 406856 ?      Ssl  13:58   2:04 /usr/bin/gnome-shell
+fafiq       7550  5.7  2.1 1465102452 342384 ?   Sl   14:13   1:40 /usr/share/code/code --type=zygote
+fafiq       5355  0.5  2.0 2883356 325924 ?      Sl   13:59   0:15 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43070 -prefMapHandle 1:283466 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {50852c97-263a-47e6-b1e1-1a350b8b2930} -parentPid 4315 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 7 tab
+fafiq       5369  0.2  1.7 2851608 274164 ?      Sl   13:59   0:07 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43070 -prefMapHandle 1:283466 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {73f4e855-1a3e-4139-8f79-cd0ce79cc3f5} -parentPid 4315 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 9 tab
+fafiq       7662  1.1  1.7 1461342684 271712 ?   Sl   14:13   0:19 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=7459 --enable-crash-reporter=9f087d08-a067-4f53-bfef-10d3b83556b8,no_channel --user-data-dir=/home/fafiq/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,8274984242347241118,10996704503328616168,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708990997080739
+fafiq       6242  0.2  1.7 2791856 268900 ?      Sl   14:04   0:06 /snap/firefox/8107/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44518 -prefMapHandle 1:283466 -jsInitHandle 2:156136 -parentBuildID 20260404010525 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {0a42edd0-b348-4479-8274-17c114d9b710} -parentPid 4315 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8107/usr/lib/firefox/omni.ja -appomni /snap/firefox/8107/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8107/usr/lib/firefox/browser 13 tab
+fafiq       7429  0.8  1.6 1478504836 251364 ?   SLl  14:13   0:14 /usr/share/code/code
+
+```
+
+#### Prompt
+```
+top
+```
+
+#### Prompt
+```
+sudo apt install -y htop
+htop
+```
+
+### Latihan Praktikum 6.6
+#### Soal
+1. Gunakan ps aux –sort=%mem untuk menemukan proses yang menggunakan memori paling banyak di VM Anda. Proses apa itu?
+2. Di dalam top, tekan 1 . Apa yang berubah pada tampilan? Mengapa informasi ini berguna?
+3. Di dalam htop, navigasikan ke proses sshd menggunakan tombol panah. Tekan F9 dan amati opsi sinyal yang tersedia.
+
+#### Jawaban
+1. Berdasarkan perintah ps aux --sort=-%mem, proses yang menggunakan memori paling banyak adalah proses yang berada di urutan paling atas setelah header, yaitu proses dengan nilai penggunaan memori terbesar pada saat pengamatan dilakukan di sistem.
+2. Ketika menekan tombol 1 di dalam top, tampilan berubah dengan menampilkan penggunaan CPU secara terpisah untuk setiap core prosesor, sehingga memudahkan pengguna dalam melihat distribusi beban kerja pada masing-masing core CPU.
+3. Di dalam htop, saat menekan tombol F9 pada proses seperti sshd, akan muncul berbagai pilihan sinyal seperti SIGTERM, SIGKILL, dan SIGSTOP yang dapat digunakan untuk mengontrol proses tersebut, misalnya untuk menghentikan, mematikan secara paksa, atau menjeda proses.
+
 
 ## Latihan
 ### Latihan 6A
+#### Eksplorasi Proses Sistem
+1. Jalankan ps aux –forest dan temukan proses dengan PID 1. Apa nama dan fungsi proses tersebut dalam sistem Linux modern?
+2. Hitung berapa proses yang dimiliki oleh user root dan berapa yang dimiliki oleh user Anda. Mengapa root memiliki lebih banyak proses?
+3. Temukan semua proses yang berada dalam kondisi S. Mengapa sebagian besar proses di sistem berada dalam kondisi ini?
+
+#### Jawaban
+1. Berdasarkan hasil perintah ps aux --forest, proses dengan PID 1 adalah systemd, yang berfungsi sebagai proses inisialisasi utama pada sistem Linux modern untuk mengelola dan menjalankan layanan serta proses lain sejak sistem pertama kali booting.
+2. Jumlah proses yang dimiliki oleh user root lebih banyak dibandingkan dengan user biasa karena root bertanggung jawab menjalankan berbagai layanan dan proses sistem yang penting, seperti daemon dan service yang berjalan di latar belakang.
+3. Sebagian besar proses berada dalam kondisi S (sleeping) karena proses-proses tersebut sedang menunggu suatu event atau input, seperti operasi I/O atau interaksi pengguna, sehingga tidak selalu aktif menggunakan CPU.
+
 ### Latihan 6B
+#### Simulasi Manajemen Job
+1. Jalankan tiga perintah sleep dengan durasi 100, 200, dan 300 detik di background. Verifikasi ketiganya dengan jobs.
+2. Bawa job kedua ke foreground, jeda dengan Ctrl+Z , lalu kembalikan ke background dengan bg.
+3. Hentikan job pertama dengan kill %1. Tampilkan kembali daftar job. Berapa job yang tersisa?
+
+#### Jawaban
+1. Setelah menjalankan tiga perintah sleep dengan durasi 100, 200, dan 300 detik di background, ketiga job tersebut berhasil berjalan secara bersamaan dan dapat diverifikasi menggunakan perintah jobs, yang menampilkan daftar job aktif beserta nomor dan statusnya.
+2. Ketika job kedua dibawa ke foreground menggunakan fg %2, kemudian dijeda dengan menekan Ctrl+Z, statusnya berubah menjadi stopped, dan setelah dijalankan kembali dengan perintah bg %2, job tersebut kembali berjalan di background.
+3. Setelah menghentikan job pertama menggunakan perintah kill %1, dan menampilkan kembali daftar job dengan jobs, terlihat bahwa jumlah job yang tersisa adalah dua, karena satu job telah dihentikan.
+
 ### Latihan 6C
+#### Prioritas dan Sinyal
+1. Jalankan dua proses sleep: satu dengan nice +5 dan satu dengan nice +15. Verifikasi nilai NI keduanya dengan ps.
+2. Gunakan renice untuk mengubah nice proses pertama menjadi +10. Proses mana yang kini lebih diprioritaskan scheduler?
+3. Kirim SIGSTOP ke salah satu proses, verifikasi kondisi T-nya, lalu kirim SIGCONT. Akhiri semua proses percobaan dengan pkill sleep.
+
+#### Jawaban
+1. Setelah menjalankan dua proses sleep dengan nilai nice +5 dan +15, dapat diverifikasi melalui perintah ps bahwa proses dengan nilai nice +5 memiliki prioritas lebih tinggi dibandingkan dengan proses yang memiliki nilai nice +15.
+2. Setelah mengubah nilai nice proses pertama menjadi +10 menggunakan renice, maka proses dengan nilai nice +10 memiliki prioritas lebih tinggi dibandingkan proses dengan nilai nice +15, karena semakin kecil nilai nice maka semakin tinggi prioritasnya.
+3. Ketika sinyal SIGSTOP dikirim ke salah satu proses, status proses berubah menjadi T (stopped), kemudian setelah dikirim SIGCONT proses kembali berjalan normal, dan seluruh proses percobaan dapat diakhiri menggunakan perintah pkill sleep.
