@@ -1,10 +1,10 @@
-# Laporan Praktikum Sistem Operasi Jobsheet 7
+# Laporan Praktikum Sistem Operasi Pertemuan Ke-7
 
 <h4>Nama  : Fafiq Lutfi Azana<h4>
 <h4>NIM   : 254107020058<h4>
 <h4>Kelas : TI-1G<h4>
 
-### Praktikum 7.1 — Mengenali Bash dan Menyiapkan Workspace
+### Praktikum 6.1 — Mengenali Bash dan Menyiapkan Workspace
 #### Prompt
 ```
 echo "Shell login : $SHELL"
@@ -76,7 +76,7 @@ app-01.log  app-02.log  app-03.log
 ./sampel:
 backup-01.tar  backup-02.tar  catatan-a.txt  catatan-b.txt  laporan-bulanan.log  laporan-harian.log  laporan-mingguan.log
 ```
-### Praktikum 7.2 — Membuat Ringkasan Sesi Terminal
+### Praktikum 6.2 — Membuat Ringkasan Sesi Terminal
 #### Prompt
 ```
 cd ~/praktikum-os/week07-bash
@@ -130,7 +130,7 @@ PID shell : 11719
 Direktori : /home/fafiq/praktikum-os/week07-bash
 ```
 
-### Praktikum 7.3 — Menambahkan Konfigurasi Aman pada .bashrc
+### Praktikum 6.3 — Menambahkan Konfigurasi Aman pada .bashrc
 #### Prompt
 ```
 ls -la ~ | grep -E 'bashrc|bash_profile|profile'
@@ -182,7 +182,7 @@ echo "$EDITOR"
 nano
 ```
 
-### Praktikum 7.4 — Menyiapkan .bash_profile untuk Shell Login
+### Praktikum 6.4 — Menyiapkan .bash_profile untuk Shell Login
 #### Prompt
 ```
 [ -f ~/.bash_profile ] && cp ~/.bash_profile ~/.bash_profile.bak-praktikum
@@ -214,7 +214,7 @@ exit
 ```
 Login Bash pada 2026-04-17 15:33:20
 ```
-### Praktikum 7.5 — Membedakan Variabel Shell dan Environment Variable
+### Praktikum 6.5 — Membedakan Variabel Shell dan Environment Variable
 #### Prompt
 ```
 KELAS_OS="Sistem Operasi A"
@@ -265,7 +265,7 @@ type ls
 ls is aliased to `ls --color=auto'
 ```
 
-### Praktikum 7.6 — Menambahkan Direktori Script Pribadi ke PATH
+### Praktikum 6.6 — Menambahkan Direktori Script Pribadi ke PATH
 
 #### Prompt
 ```
@@ -326,7 +326,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 /dev/nvme0n1p3   94G   15G   75G  17% /
 fafiq@fafiq-ubuntu:~$ 
 ```
-### Praktikum 7.7 — Membuat Alias Produktivitas Dasar
+### Praktikum 6.7 — Membuat Alias Produktivitas Dasar
 #### Prompt
 ```
 cat <<'EOF' >> ~/.bashrc
@@ -414,7 +414,7 @@ ll is aliased to `ls -lah --color=auto'
 fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash$ 
 ```
 
-### Praktikum 7.8 — Membuat Fungsi Backup Konfigurasi
+### Praktikum 6.8 — Membuat Fungsi Backup Konfigurasi
 #### Prompt
 ```
 echo "PORT=8080" > ~/praktikum-os/week07-bash/sample-app.conf
@@ -518,7 +518,7 @@ backup_conf ()
 fafiq@fafiq-ubuntu:~$ 
 
 ```
-### Praktikum 7.9 — Menggunakan Completion Dasar dan Melihat History
+### Praktikum 6.9 — Menggunakan Completion Dasar dan Melihat History
 #### Hasil
 ```
 fafiq@fafiq-ubuntu:~$ cd ~/praktikum-os/week07-bash/sampel
@@ -939,7 +939,7 @@ fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash/sampel$ cat ~/praktikum-os/week07-
 fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash/sampel$ 
 
 ```
-### Praktikum 7.10 — Menelusuri Perintah Diagnostik dengan History
+### Praktikum 6.10 — Menelusuri Perintah Diagnostik dengan History
 #### Hasil
 ```
 fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash/sampel$ cd ~
@@ -1017,7 +1017,7 @@ fafiq@fafiq-ubuntu:~$ history | tail -n 20 > ~/praktikum-os/week07-bash/diag-his
 fafiq@fafiq-ubuntu:~$ 
 ```
 
-### Praktikum 7.11 — Mencoba Wildcard Dasar
+### Praktikum 6.11 — Mencoba Wildcard Dasar
 #### Hasil
 ```
 fafiq@fafiq-ubuntu:~$ cd ~/praktikum-os/week07-bash/sampel
@@ -1037,7 +1037,7 @@ fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash/sampel$ echo ~
 /home/fafiq
 fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash/sampel$ 
 ```
-### Praktikum 7.12 — Mengarsipkan Banyak Log Sekaligus
+### Praktikum 6.12 — Mengarsipkan Banyak Log Sekaligus
 #### Hasil
 ```
 fafiq@fafiq-ubuntu:~$ cd ~/praktikum-os/week07-bash/logs
@@ -1081,7 +1081,7 @@ drwxrwxr-x 2 fafiq fafiq 4.0K Apr 28 21:36 arsip-log
 -rw-rw-r-- 1 fafiq fafiq  220 Apr 28 21:36 arsip-log-2026-04-28.tar.gz
 fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash/logs$ 
 ```
-### Praktikum 7.13 — Membedakan Single Quote, Double Quote, dan Escape
+### Praktikum 6.13 — Membedakan Single Quote, Double Quote, dan Escape
 #### Hasil
 ```
 fafiq@fafiq-ubuntu:~$ echo '$USER bekerja di $HOME'
@@ -1096,7 +1096,7 @@ fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash/ruang-nama$ ls laporan\ server\ ap
 fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash/ruang-nama$ cat "laporan server april.txt"
 fafiq@fafiq-ubuntu:~/praktikum-os/week07-bash/ruang-nama$ 
 ```
-### Praktikum 7.14 — Menangani File dengan Nama Sulit Secara Aman
+### Praktikum 6.14 — Menangani File dengan Nama Sulit Secara Aman
 #### Hasil
 ```
 fafiq@fafiq-ubuntu:~$ cd ~/praktikum-os/week07-bash/ruang-nama
